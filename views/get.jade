@@ -1,0 +1,51 @@
+extends layout
+
+block navbar
+	ul.nav.navbar-nav.mid-nav
+		li
+			a(href='/post') POST
+		li.active
+			a(href='/get') GET
+		li
+			a(href='/put') PUT
+		li
+			a(href='/delete') DELETE
+
+block content
+	h3 GET
+	div.container-fluid
+		div.mid-text-box.left
+			ul
+				li The table below renders 
+					code api/objects
+					|  response.
+				li Or issue a GET request to 
+					code api/objects
+					a(href='api/objects')  here.
+				li Issue a GET request to 
+					code api/objects/:id
+					|  click 'Show' button below.
+		table.table.table-hover.mid-table
+			thead
+				tr
+					th ID
+					th First Name
+					th Last Name
+					th DOB
+					th DOD
+					th
+			tbody
+				if !(records && records.length) 
+					p No records found.
+				else 
+					each record in records
+						tr
+							td #{record.uid}
+							td #{record.firstname}
+							td #{record.lastname}
+							td #{record.dob}
+							td #{record.dod}
+							td 
+								a.btn.btn-default(href='/api/objects/#{record.uid}') Show
+
+

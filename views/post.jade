@@ -1,0 +1,32 @@
+extends layout
+
+block navbar
+	ul.nav.navbar-nav.mid-nav
+		li.active
+			a(href='/post') POST
+		li
+			a(href='/get') GET
+		li
+			a(href='/put') PUT
+		li
+			a(href='/delete') DELETE
+
+block content
+	h3 POST
+	div.container-fluid
+		div.mid-text-box.left
+			ul
+				li
+					| Issue a POST request to 
+					code 
+						|api/objects
+					|  through following form.
+		form.col-md-4.mid-text-box(method='post', action='api/objects',enctype='application/x-www-form-urlencoded')
+			div.form-group
+				input.form-control(type='text', placeholder='First Name',name='firstname')
+				br
+				input.form-control(type='text', placeholder='Last Name', name='lastname')
+				br
+				input.form-control(type='text', placeholder='Date of Birth', name='dob')
+				br
+				input.btn.btn-default(type='submit', value='Create')

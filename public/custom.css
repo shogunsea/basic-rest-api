@@ -1,0 +1,30 @@
+body {
+  padding-top: 50px;
+}
+.custom {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.mid-text-box {
+	padding-left: 35%;
+	width: 75% !important;
+}
+.mid-text-box.left {
+	text-align: left !important;
+	width: 80% !important;
+}
+.mid-nav {
+	padding-left: 20%;
+}
+.mid-table {
+	margin: 0 auto;
+	width: 50%;
+}
+.code {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+}

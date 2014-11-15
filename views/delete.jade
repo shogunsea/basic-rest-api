@@ -1,0 +1,48 @@
+extends layout
+
+block navbar
+	ul.nav.navbar-nav.mid-nav
+		li
+			a(href='/post') POST
+		li
+			a(href='/get') GET
+		li
+			a(href='/put') PUT
+		li.active
+			a(href='/delete') DELETE
+
+block content
+	h3 DELETE
+	div.container-fluid
+		div.mid-text-box.left
+			ul
+				li The table below renders 
+					code api/objects
+					|  response.
+				li Issue a DELETE request to 
+					code api/object/:id
+					|  click 'DELETE' button below.
+		table.table.table-hover.mid-table
+			thead
+				tr
+					th ID
+					th First Name
+					th Last Name
+					th DOB
+					th DOD
+					th
+			tbody
+				if !(records && records.length) 
+					p No records found.
+				else 
+					each record in records
+						tr
+							td #{record.uid}
+							td #{record.firstname}
+							td #{record.lastname}
+							td #{record.dob}
+							td #{record.dod}
+							td 
+								input.del.btn.btn-default(type='submit' id="#{record.uid}" value="Delete")
+
+
