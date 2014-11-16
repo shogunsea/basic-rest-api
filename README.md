@@ -14,7 +14,7 @@ Makre sure MongoDB is running at background, then in source directory run
 ```sh
 $ node app.js 
 ```
-to start the application at 'localhost:3000'
+to start the application at `localhost:3000`
 
 ## Test
 In source directory run
