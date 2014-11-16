@@ -15,3 +15,7 @@ In source directory run
 $ node test/spec.js 
 ```
 to run all tests.
+
+## License
+
+MIT
