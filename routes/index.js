@@ -12,41 +12,6 @@ module.exports = function(app) {
 		return res.redirect('/post');
 	})
 
-	function handler(req, res) {
-	    var POST = {};
-	    if (req.method == 'POST') {
-	    	console.log('inside handler');
-	    	debugger
-	        req.on('data', function(data) {
-	            data = data.toString();
-	            data = data.split('&');
-	            for (var i = 0; i < data.length; i++) {
-	                var _data = data[i].split("=");
-	                POST[_data[0]] = _data[1];
-	            }
-	            // console.log(POST);
-	            
-	        });
-
-	    }
-	    return POST;
-	};
-
-	function parse (req) {
-		var util  = require('util');
-		var formidable = require('formidable');
-		var res = {};
-		var form = new formidable.IncomingForm();
-		form.parse(req, function (err, fields, files) {
-			debugger
-			res = {fields: fields, files: files};
-		})
-
-		debugger
-
-		return res;
-
-	};
 
 	app.get('/post', function (req, res) {
 		console.log(new Date().toISOString() + ' Got request from ' + req.connection.remoteAddress);
@@ -54,8 +19,6 @@ module.exports = function(app) {
 	});
 
 	app.post('/api/objects', function (req, res, next) {
-		// var aa = handler(req,res);
-		// var bb = parse(req);
 		debugger
 		var intValidation = JSON.stringify(req.body) === '{}';
 		// will be parsed as: string as key, empty string as its
@@ -215,20 +178,6 @@ module.exports = function(app) {
 		});
 	});
 
-
-	// function updateSchema (doc) {
-	// 	var currentSchema = User.schema.paths;
-	// 	var newAtt = {};
-	// 	for (var att in doc) {
-	// 		if (!currentSchema.hasOwnProperty(att)) {
-	// 			newAtt['' + att] = 'String';
-	// 		}
-	// 	}
-	// 	debugger
-	// 	User.add(newAtt);
-	// }
-
-	
 
 	function parseMongoDoc(doc) {
 		if (Array.isArray(doc)) {
