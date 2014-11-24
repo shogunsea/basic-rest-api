@@ -1,6 +1,6 @@
 # Basic REST API Implementation
 
-Simple REST API implementation from one given requirement, built from scratch in [Node](http://nodejs.org/), and [mongodb](https://www.mongodb.org/downloads) as database. Makre sure to install both of the two before running this tiny app.
+Simple REST API implementation from one given requirement, built from scratch in [Node](http://nodejs.org/), and [mongodb](https://www.mongodb.org/downloads) as database. Makre sure to install both of the two before running this tiny app. Check out the demo [here](http://104.236.18.125:3000).
 
 ## Installation
 Download the source and in source directory run
